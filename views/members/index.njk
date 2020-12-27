@@ -1,0 +1,50 @@
+{% extends "layout.njk" %}
+
+
+{% block content %}
+
+    <div class="card table-container">
+         <a href="/members/create">Novo</a>
+       <table width="100%"> 
+           <thead> 
+               <tr> 
+                   <th>Membro</th>
+                   <th>E-mail</th>
+                   <th>Peso</th>
+                   <th>Altura</th>
+                   <th>Ação</th>
+               </tr>
+           </thead>
+
+            
+           <tbody>
+               {% for member in members%}
+               <tr>
+                   
+                   <td>
+                       <span style="background-image: url({{member.avatar_url}})"></span>
+                       {{member.name}}
+                    </td>
+
+                   <td>
+                      <span>{{member.email }}</span>                     
+                    </td>
+
+                    <td>
+                      <span>{{member.weight}}kg</span>                     
+                    </td>
+
+                    <td>
+                      <span>{{member.height }}cm</span>                     
+                    </td>
+
+                   <td> <a href="/members/{{member.id}}">Ver</a></td>
+               </tr>
+               {%endfor%}
+               
+           </tbody>
+
+       </table>
+    </div>
+
+{% endblock content %}
