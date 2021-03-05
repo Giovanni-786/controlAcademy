@@ -189,7 +189,7 @@ a.button{
     border-radius: 4px;
     margin-top: 16px;
     width: 100%;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
 }
 
@@ -302,6 +302,79 @@ td:last-child {
     
 }
 
+/* FILTERS */
+
+.table-container .header {
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    align-items: center;
+    margin-bottom: 32px;
+    
+}
+
+.table-container .header a
+ {
+    margin: 0;
+    width: 120px;
+ }
+
+.table-container .header form button
+{
+    margin: 0;
+    cursor: pointer;
+    transition: 300ms;
+}
+
+.table-container .header form button:hover{
+    filter: brightness(0.8);
+}
+
+
+.table-container .header form input {
+    border: 1px solid #eee;
+    padding: 4px 8px;
+    box-sizing: border-box; 
+}
 
 
 
+.table-container .header form{
+    display: grid;
+    grid-template-columns: 1fr 120px;
+    align-items: center;
+}
+
+
+/** Pagination**/
+
+.table-container{
+    display: grid;
+    grid-template: 64px 1fr 16px / 1fr;
+}
+
+.table-container .header {
+    margin: 0;
+    align-self: start;
+}
+
+.table-container .pagination {
+    margin: 0;
+    align-self: end;
+    justify-self: center;
+}
+
+.pagination a,
+.pagination span {
+    color: var(--primary-color);
+    text-decoration: none;
+    margin-right: 16px;
+}
+
+.pagination a.active{
+    font-weight: 600;
+}
+
+.pagination a:hover{
+    filter: brightness(0.3);
+    border-bottom: 1px solid var(--primary-color);
+}
